@@ -4,13 +4,13 @@ import { IoMdClose } from "react-icons/io";
 import { FaBox } from "react-icons/fa";
 import { FaPeopleGroup } from "react-icons/fa6";
 import { IoCloud } from "react-icons/io5";
-import {IoMdContact} from "react-icons/io";
+import { IoMdContact } from "react-icons/io";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 const Navbar = () => {
   const [MenuToggle, setMenuToggle] = useState(false);
   return (
-    <nav className=" bg-white border-b border-gray-200 shadow-sm md:static sticky top-0 z-10">
+    <nav className=" bg-white border-b border-gray-200 shadow-sm md:static sticky top-0 z-20">
       <div className="px-4 md:mx-8 lg:mx-14 py-3 flex items-center justify-between">
         {/* Logo */}
         <Link to="/">
@@ -63,14 +63,14 @@ const Navbar = () => {
                 </div>
                 {/* Contact */}
                 <div>
-            <Link 
-             to="/contact"
-             className="text-gray-600 hover:text-black text-base flex items-center"
-            >
-              <IoMdContact color="green" size={22} />
-              <span className="font-medium ml-2">ContactUs</span>
-            </Link>
-          </div>
+                  <Link
+                    to="/contact"
+                    className="text-gray-600 hover:text-black text-base flex items-center"
+                  >
+                    <IoMdContact color="green" size={22} />
+                    <span className="font-medium ml-2">ContactUs</span>
+                  </Link>
+                </div>
               </ul>
             </div>
           ) : (
@@ -114,9 +114,9 @@ const Navbar = () => {
           </div>
           {/* Contact */}
           <div>
-            <Link 
-             to="/contact"
-             className="text-gray-600 hover:text-black text-base flex items-center"
+            <Link
+              to="/contact"
+              className="text-gray-600 hover:text-black text-base flex items-center"
             >
               <IoMdContact color="green" size={22} />
               <span className="font-medium ml-2">ContactUs</span>
