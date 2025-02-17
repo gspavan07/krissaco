@@ -4,13 +4,13 @@ import { IoMdClose } from "react-icons/io";
 import { FaBox } from "react-icons/fa";
 import { FaPeopleGroup } from "react-icons/fa6";
 import { IoCloud } from "react-icons/io5";
+import {IoMdContact} from "react-icons/io";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
-
 const Navbar = () => {
   const [MenuToggle, setMenuToggle] = useState(false);
   return (
-    <nav className=" bg-white border-b border-gray-200 shadow-sm">
+    <nav className=" bg-white border-b border-gray-200 shadow-sm md:static sticky top-0 z-10">
       <div className="px-4 md:mx-8 lg:mx-14 py-3 flex items-center justify-between">
         {/* Logo */}
         <Link to="/">
@@ -19,11 +19,11 @@ const Navbar = () => {
           </div>
         </Link>
         {/*Small Screen Navbar Items */}
-        <div className="lg:hidden block">
+        <div className="lg:hidden block cursor-pointer">
           {MenuToggle ? (
-            <div className="scale-up-hor-right z-20 fixed top-0 right-0 h-fit bg-white shadow-lg">
-              <div className="flex items-center justify-between px-4 md:py-5 py-4 border-b">
-                <span className="text-lg font-bold">Menu</span>
+            <div className="scale-up-hor-right z-20 fixed top-0 right-0 h-fit bg-white shadow-lg ">
+              <div className="flex items-center justify-between px-4 md:py-5 py-4 border-b ">
+                <span className="text-lg font-bold ">Menu</span>
                 <IoMdClose
                   className="size-[1.5rem]"
                   onClick={() => setMenuToggle(false)}
@@ -61,6 +61,16 @@ const Navbar = () => {
                     <span className="font-medium ml-2">Careers</span>
                   </Link>
                 </div>
+                {/* Contact */}
+                <div>
+            <Link 
+             to="/contact"
+             className="text-gray-600 hover:text-black text-base flex items-center"
+            >
+              <IoMdContact color="green" size={22} />
+              <span className="font-medium ml-2">ContactUs</span>
+            </Link>
+          </div>
               </ul>
             </div>
           ) : (
@@ -100,6 +110,16 @@ const Navbar = () => {
             >
               <FaPeopleGroup color="green" size={22} />
               <span className="font-medium ml-2">Careers</span>
+            </Link>
+          </div>
+          {/* Contact */}
+          <div>
+            <Link 
+             to="/contact"
+             className="text-gray-600 hover:text-black text-base flex items-center"
+            >
+              <IoMdContact color="green" size={22} />
+              <span className="font-medium ml-2">ContactUs</span>
             </Link>
           </div>
         </div>
