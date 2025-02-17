@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { FaBullhorn } from "react-icons/fa";
 const Products = () => {
   return (
     <div>
@@ -79,6 +80,10 @@ const Products = () => {
             </div>
           </div>
         </div>
+      <div className="text-4xl flex mt-8 font-bold ">
+        <FaBullhorn size={40} color="green" />
+        <span className="ml-3">Will be in the market, soon!</span>
+      </div>
       </div>
       <Footer />
     </div>

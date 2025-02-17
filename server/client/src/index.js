@@ -6,6 +6,7 @@ import App from "./App";
 import Products from "./screens/Products";
 import Services from "./screens/Services";
 import Careers from "./screens/Careers";
+import Contact from "./screens/Contact";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -16,6 +17,7 @@ root.render(
         <Route path="/products" element={<Products />} />
         <Route path="/services" element={<Services />} />
         <Route path="/careers" element={<Careers />} />
+        <Route path="/contact" element={<Contact/>}/>
       </Routes>
     </HashRouter>
   </React.StrictMode>

@@ -13,7 +13,7 @@ function App() {
         <div className="flex relative h-full py-20 bg-white">
           <div className="w-1/3 lg:flex hidden items-center justify-center">
             <img
-              src="/logo512.png"
+              src="logo512.png"
               alt="Krissaco"
               className="w-[256px] h-auto object-cover"
             />
