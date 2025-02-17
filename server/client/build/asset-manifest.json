@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/krissaco/static/css/main.1ab94ccf.css",
+    "main.js": "/krissaco/static/js/main.53e111ee.js",
+    "static/media/logo.png": "/krissaco/static/media/logo.90a9a09843f4b0edaac1.png",
+    "index.html": "/krissaco/index.html",
+    "main.1ab94ccf.css.map": "/krissaco/static/css/main.1ab94ccf.css.map",
+    "main.53e111ee.js.map": "/krissaco/static/js/main.53e111ee.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1ab94ccf.css",
+    "static/js/main.53e111ee.js"
+  ]
+}
