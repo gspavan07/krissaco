@@ -16,7 +16,7 @@ const Contact = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:3000/api/contactus", {
+      const response = await fetch("/api/contactus", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

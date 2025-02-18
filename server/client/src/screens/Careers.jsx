@@ -8,7 +8,7 @@ const Careers = () => {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const res = await fetch("http://localhost:3000/api/jobs", {
+        const res = await fetch("/api/jobs", {
           method: "POST", // Use GET if you are retrieving data
           headers: {
             "Content-Type": "application/json",
