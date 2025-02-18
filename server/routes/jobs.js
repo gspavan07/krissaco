@@ -3,6 +3,6 @@ import jobs from "../controllers/jobs.js";
 
 const router = express.Router();
 
-router.get("/jobs", jobs);
+router.post("/jobs", jobs);
 
 export default router;

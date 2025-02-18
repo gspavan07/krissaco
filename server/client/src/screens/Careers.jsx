@@ -9,7 +9,7 @@ const Careers = () => {
     const fetchJobs = async () => {
       try {
         const res = await fetch("http://localhost:3000/api/jobs", {
-          method: "GET", // Use GET if you are retrieving data
+          method: "POST", // Use GET if you are retrieving data
           headers: {
             "Content-Type": "application/json",
           },
