@@ -6,6 +6,8 @@ import App from "./App";
 import Products from "./screens/Products";
 import Services from "./screens/Services";
 import Careers from "./screens/Careers";
+import Contact from "./screens/Contact";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -23,6 +25,11 @@ const router = createBrowserRouter([
   {
     path: "/careers",
     element: <Careers />,
+    // errorElement: <ErrorPage />,
+  },
+  {
+    path: "/contact",
+    element: <Contact />,
     // errorElement: <ErrorPage />,
   },
 ]);
