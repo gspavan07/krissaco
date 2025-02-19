@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
-
+import { IoCheckmarkCircleOutline } from "react-icons/io5";
 const Contact = () => {
+  const [button,setButton] = useState(true)
+  const [Submited,setSubmited] = useState(false)
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -14,7 +17,7 @@ const Contact = () => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    setButton(false)
     try {
       const response = await fetch("/api/contactus", {
         method: "POST",
@@ -26,17 +29,28 @@ const Contact = () => {
 
       if (response.ok) {
         setFormData({ firstName: "", lastName: "", email: "", message: "" }); // Clear the form
+        setButton(true)
+        setSubmited(true)
+        setInterval(() => {
+          setSubmited(false)
+        }, 2000);
       } else {
+        setButton(true)
         console.log("There was an error sending your message.");
       }
     } catch (error) {
+      setButton(true)
       console.error("Error:", error);
     }
   };
   return (
     <div className="flex flex-col min-h-screen bg-green-50 text-black">
       <Navbar />
-      <div className="w-full h-[90vh] flex justify-center items-center">
+      <div className="relative w-full h-[90vh] flex justify-center items-center">
+        {Submited&&<div className="absolute shadow-xl flex flex-col justify-center items-center gap-2 rounded-2xl z-10 px-10 py-5 bg-white">
+        <IoCheckmarkCircleOutline color="green" size={100}/>
+        Submited
+        </div>}
         {/* Outer container for the form */}
         <div className="w-full max-w-2xl bg-white p-8 rounded shadow-lg">
           <h2 className="text-2xl font-bold mb-6 text-gray-700">
@@ -58,6 +72,7 @@ const Contact = () => {
                   name="firstName"
                   value={formData.firstName}
                   type="text"
+                  required
                   placeholder="Please enter first name"
                   className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
                   onChange={handleChange}
@@ -76,6 +91,7 @@ const Contact = () => {
                   name="lastName"
                   value={formData.lastName}
                   type="text"
+                  required
                   placeholder="Please enter last name"
                   className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
                   onChange={handleChange}
@@ -97,6 +113,7 @@ const Contact = () => {
                   name="email"
                   value={formData.email}
                   type="email"
+                  required
                   placeholder="Please enter email"
                   className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
                   onChange={handleChange}
@@ -117,6 +134,7 @@ const Contact = () => {
                 name="message"
                 value={formData.message}
                 rows="4"
+                required
                 placeholder="Please enter your query..."
                 className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
                 onChange={handleChange}
@@ -126,9 +144,11 @@ const Contact = () => {
             {/* Submit Button */}
             <button
               type="submit"
+              disabled={!button}
               className="w-full bg-green-500 text-white font-semibold py-2 px-4 rounded hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500"
             >
-              Submit
+          
+          {button ? "Submit" : "Submitting..."} {/* Change text when submitting */}
             </button>
           </form>
         </div>
